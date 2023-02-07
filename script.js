@@ -36,7 +36,7 @@ const form = document.querySelector("form");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const size = Number(document.getElementById("size").value);
-
+  lastSize = size;
   generateGrid(size);
 });
 
@@ -49,5 +49,11 @@ colorButtons.forEach((button) => {
   });
 });
 
+const eraseButton = document.querySelector(".erase");
+eraseButton.addEventListener("click", () => {
+  generateGrid(lastSize);
+});
+
 let colorSystem = "standard";
+let lastSize = 16;
 generateGrid();

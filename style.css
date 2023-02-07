@@ -15,20 +15,42 @@ body {
   color: #222222;
 }
 .container {
-  width: 80%;
-  margin: 20px auto;
+  width: 90%;
+  margin: 40px auto;
+  display: flex;
+  justify-content: space-between;
+}
+.grid-container {
+  padding: 30px;
+  background-color: #222222;
+  width: fit-content;
 }
 .grid {
   width: 800px;
   height: 500px;
-  margin: 50px auto;
-  background-color: #222222;
+  margin: auto;
+  background-color: white;
   display: flex;
   flex-wrap: wrap;
 }
 .grid div {
-  background-color: aqua;
+  border: 1px solid #ccc;
 }
-.grid div:hover {
-  background-color: #222222;
+form {
+  margin-bottom: 10px;
+}
+form label {
+  display: block;
+  font-weight: 600;
+}
+input,
+button {
+  padding: 3px;
+  outline: none;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+}
+button {
+  cursor: pointer;
 }

@@ -14,7 +14,11 @@ function generateGrid(size = 16) {
   const squares = document.querySelectorAll(".grid div");
   squares.forEach((square) => {
     square.addEventListener("mouseover", () => {
-      square.style.backgroundColor = getRandomColor();
+      if (colorSystem === "standard") {
+        square.style.backgroundColor = "#000";
+      } else if (colorSystem === "random") {
+        square.style.backgroundColor = getRandomColor();
+      }
     });
   });
 }
@@ -32,7 +36,18 @@ const form = document.querySelector("form");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const size = Number(document.getElementById("size").value);
+
   generateGrid(size);
 });
 
+const colorButtons = document.querySelectorAll(".color-system button");
+colorButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    colorButtons.forEach((btn) => btn.classList.remove("active"));
+    button.classList.add("active");
+    colorSystem = button.id;
+  });
+});
+
+let colorSystem = "standard";
 generateGrid();

@@ -37,11 +37,12 @@ body {
   border: 1px solid #ccc;
 }
 form {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 form label {
   display: block;
   font-weight: 600;
+  margin-bottom: 2px;
 }
 input,
 button {
@@ -53,4 +54,17 @@ button {
 }
 button {
   cursor: pointer;
+}
+.color-system h4 {
+  margin-bottom: 3px;
+}
+.color-system {
+  margin-bottom: 20px;
+}
+.active {
+  outline: 1px solid rgb(2, 192, 2);
+}
+.erase {
+  background-color: rgb(155, 9, 9);
+  color: white;
 }
